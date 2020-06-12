@@ -1,0 +1,24 @@
+{% for idea in ideas %}
+    <div class="idea">
+        <div class="img">
+            <img src="{{idea.image}}" alt="Imagem de {{idea.title}}">
+            <form action="/excluir">
+                <input type="hidden" name="idIdea" value="{{idea.id}}">
+                <button type="submit" class="excluir">
+                    <img src="https://image.flaticon.com/icons/svg/1345/1345823.svg" alt="Excluir">
+                </button>
+            </form>
+        </div>
+        
+        <div class="content">
+            <h3>{{idea.title}}</h3>
+            <p>{{idea.category}}</p>
+            <div class="description">
+                {{idea.description}}
+            </div>
+            <a href="{{idea.link}}" target="_blank">Ir para a ideia</a>
+
+        </div>
+        
+    </div>
+{% endfor %}
